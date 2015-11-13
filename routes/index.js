@@ -2,10 +2,17 @@ var express = require('express');
 var router = express.Router();
 // could use one line instead: var router = require('express').Router();
 var tweetBank = require('../tweetBank');
+var User = require('../models').User;
+var Tweet = require('../models').Tweet;
 
 router.get('/', function (req, res) {
-  var tweets = tweetBank.list();
-  res.render( 'index', { title: 'Twitter.js', tweets: tweets } );
+  // var tweets = tweetBank.list();
+  User.findAll()
+  .then(function(value){
+  	res.status(200).send(value);
+  });
+  	// res.status(200).send(users));
+  // res.render( 'index', { title: 'Twitter.js', tweets: tweets } );
 });
 
 function getTweet (req, res){
