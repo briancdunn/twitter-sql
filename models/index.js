@@ -22,7 +22,7 @@ var User = require('./user')(twitterjsDB);
 
 // adds a UserId foreign key to the `Tweet` table
 User.hasMany(Tweet);
-Tweet.belongsTo(User);
+Tweet.belongsTo(User, { foreignKey: 'userId' });
 
 module.exports = {
     User: User,

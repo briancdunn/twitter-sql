@@ -12,9 +12,9 @@ INSERT INTO `Users` (`id`, `name`, `pictureUrl`) VALUES (NULL, 'Class 111', 'htt
  
 TRUNCATE TABLE `Tweets`;
  
-INSERT INTO `Tweets` (`id`, `userId`, `tweet`) VALUES (NULL, '1', 'Fullstack is great! #fsalove');
-INSERT INTO `Tweets` (`id`, `userId`, `tweet`) VALUES (NULL, '2', 'Fullstack academy is amazing');
-INSERT INTO `Tweets` (`id`, `userId`, `tweet`) VALUES (NULL, '3', 'Fullstack academy instructor is very cool');
+INSERT INTO `Tweets` (`id`, `USERID`, `tweet`) VALUES (NULL, '1', 'Fullstack is great! #fsalove');
+INSERT INTO `Tweets` (`id`, `uSeRiD`, `tweet`) VALUES (NULL, '2', 'Fullstack academy is amazing');
+INSERT INTO `Tweets` (`id`, `USerID`, `tweet`) VALUES (NULL, '3', 'Fullstack academy instructor is very cool');
 INSERT INTO `Tweets` (`id`, `userId`, `tweet`) VALUES (NULL, '4', 'Zeke is mindblowing');
 INSERT INTO `Tweets` (`id`, `userId`, `tweet`) VALUES (NULL, '5', 'Charlotte is amazing');
 INSERT INTO `Tweets` (`id`, `userId`, `tweet`) VALUES (NULL, '6', 'bla bla bla');

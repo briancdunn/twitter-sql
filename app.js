@@ -12,6 +12,12 @@ var PORT = 1337,
     app = express(),
     routes = require('./routes/');
 
+// start our server
+var server = app.listen(PORT, function(){
+  console.log('Listening to port', PORT);
+});
+var io = socketio.listen(server);
+
 // Swig boilerplate
 app.set('views', __dirname + '/views'); // where to find views
 app.set('view engine', 'html'); // what file extension they have
@@ -34,7 +40,7 @@ app.use(morgan('dev')); // logs req & res properties on response send
 // });
 
 // dynamic routing
-app.use('/', routes);
+app.use('/', routes(io));
 
 // static routing
 app.use(express.static(__dirname + '/public'));
@@ -60,9 +66,4 @@ app.use(function(req, res, next){
 // a custom error-handling middleware function
 app.use(function(err, req, res, next){ // 4 params -> error-handling middleware
   res.status(err.status || 500).send('ERROR: ' + err.message);
-});
-
-// start our server
-app.listen(PORT, function(){
-  console.log('Listening to port', PORT);
 });
