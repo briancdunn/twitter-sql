@@ -4,6 +4,7 @@ var express = require('express'),
     swig = require('swig'),
     bodyParser = require('body-parser'),
     mime = require('mime'),
+    socketio = require('socket.io'),
     fs = require('fs');
 
 // "constants" (not really) and our own modules
